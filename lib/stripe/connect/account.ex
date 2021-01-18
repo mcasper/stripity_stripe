@@ -127,16 +127,14 @@ defmodule Stripe.Account do
           url: String.t() | nil
         }
 
+  @type capability :: %{
+    requested: boolean
+  }
+
   @type capabilities :: %{
-          card_payments: %{
-            requested: boolean
-          } | nil,
-          legacy_payments: %{
-            requested: boolean
-          } | nil,
-          transfers: %{
-            requested: boolean
-          } | nil,
+          card_payments: capability | nil,
+          legacy_payments: capability | nil,
+          transfers: capability | nil
         }
 
   @type t :: %__MODULE__{
