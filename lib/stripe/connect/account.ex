@@ -128,15 +128,15 @@ defmodule Stripe.Account do
         }
 
   @type capabilities :: %{
-          card_payments: nil | %{
+          card_payments: %{
             requested: boolean
-          },
-          legacy_payments: nil | %{
+          } | nil,
+          legacy_payments: %{
             requested: boolean
-          },
-          transfers: nil | %{
+          } | nil,
+          transfers: %{
             requested: boolean
-          },
+          } | nil,
         }
 
   @type t :: %__MODULE__{
