@@ -113,7 +113,7 @@ defmodule Stripe.Account do
           mcc: String.t() | nil,
           name: String.t() | nil,
           product_description: String.t() | nil,
-          support_address: %{
+          support_address: nil | %{
             city: String.t() | nil,
             country: String.t() | nil,
             line1: String.t() | nil,
@@ -128,9 +128,15 @@ defmodule Stripe.Account do
         }
 
   @type capabilities :: %{
-          card_payments: String.t() | nil,
-          legacy_payments: String.t() | nil,
-          transfers: String.t() | nil
+          card_payments: nil | %{
+            requested: boolean
+          },
+          legacy_payments: nil | %{
+            requested: boolean
+          },
+          transfers: nil | %{
+            requested: boolean
+          },
         }
 
   @type t :: %__MODULE__{
