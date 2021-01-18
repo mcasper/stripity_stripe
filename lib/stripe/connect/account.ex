@@ -37,7 +37,7 @@ defmodule Stripe.Account do
         }
 
   @type company :: %{
-          address: Stripe.Types.address(),
+          address: Stripe.Types.address() | nil,
           address_kana: Stripe.Types.japan_address() | nil,
           address_kanji: Stripe.Types.japan_address() | nil,
           directors_provided: boolean | nil,
