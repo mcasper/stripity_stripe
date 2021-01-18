@@ -46,6 +46,7 @@ defmodule Stripe.Account do
           name_kanji: String.t() | nil,
           owners_provided: boolean | nil,
           phone: String.t() | nil,
+          tax_id: String.t() | nil,
           tax_id_provided: boolean | nil,
           tax_id_registar: String.t(),
           vat_id_provided: boolean | nil
