@@ -48,7 +48,7 @@ defmodule Stripe.Account do
           phone: String.t() | nil,
           tax_id: String.t() | nil,
           tax_id_provided: boolean | nil,
-          tax_id_registar: String.t(),
+          tax_id_registar: String.t() | nil,
           vat_id_provided: boolean | nil
         }
 
