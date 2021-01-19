@@ -128,15 +128,7 @@ defmodule Stripe.Account do
           optional(:url) => String.t() | nil
         }
 
-  @type capability :: %{
-    requested: boolean
-  }
-
-  @type capabilities :: %{
-          optional(:card_payments) => capability | nil,
-          optional(:legacy_payments) => capability | nil,
-          optional(:transfers) => capability | nil
-        }
+  @type capabilities :: [String.t()]
 
   @type t :: %__MODULE__{
           id: Stripe.id(),
