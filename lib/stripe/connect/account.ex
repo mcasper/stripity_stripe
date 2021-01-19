@@ -37,19 +37,19 @@ defmodule Stripe.Account do
         }
 
   @type company :: %{
-          address: Stripe.Types.address() | nil,
-          address_kana: Stripe.Types.japan_address() | nil,
-          address_kanji: Stripe.Types.japan_address() | nil,
-          directors_provided: boolean | nil,
-          name: String.t() | nil,
-          name_kana: String.t() | nil,
-          name_kanji: String.t() | nil,
-          owners_provided: boolean | nil,
-          phone: String.t() | nil,
-          tax_id: String.t() | nil,
-          tax_id_provided: boolean | nil,
-          tax_id_registar: String.t() | nil,
-          vat_id_provided: boolean | nil
+          optional(:address) => Stripe.Types.address() | nil,
+          optional(:address_kana) => Stripe.Types.japan_address() | nil,
+          optional(:address_kanji) => Stripe.Types.japan_address() | nil,
+          optional(:directors_provided) => boolean | nil,
+          optional(:name) => String.t() | nil,
+          optional(:name_kana) => String.t() | nil,
+          optional(:name_kanji) => String.t() | nil,
+          optional(:owners_provided) => boolean | nil,
+          optional(:phone) => String.t() | nil,
+          optional(:tax_id) => String.t() | nil,
+          optional(:tax_id_provided) => boolean | nil,
+          optional(:tax_id_registar) => String.t() | nil,
+          optional(:vat_id_provided) => boolean | nil
         }
 
   @type individual :: %{
@@ -111,21 +111,21 @@ defmodule Stripe.Account do
         }
 
   @type business_profile :: %{
-          mcc: String.t() | nil,
-          name: String.t() | nil,
-          product_description: String.t() | nil,
-          support_address: nil | %{
-            city: String.t() | nil,
-            country: String.t() | nil,
-            line1: String.t() | nil,
-            line2: String.t() | nil,
-            postal_code: String.t() | nil,
-            state: String.t() | nil
+          optional(:mcc) => String.t() | nil,
+          optional(:name) => String.t() | nil,
+          optional(:product_description) => String.t() | nil,
+          optional(:support_address) => nil | %{
+            optional(:city) => String.t() | nil,
+            optional(:country) => String.t() | nil,
+            optional(:line1) => String.t() | nil,
+            optional(:line2) => String.t() | nil,
+            optional(:postal_code) => String.t() | nil,
+            optional(:state) => String.t() | nil
           },
-          support_email: String.t() | nil,
-          support_phone: String.t() | nil,
-          support_url: String.t() | nil,
-          url: String.t() | nil
+          optional(:support_email) => String.t() | nil,
+          optional(:support_phone) => String.t() | nil,
+          optional(:support_url) => String.t() | nil,
+          optional(:url) => String.t() | nil
         }
 
   @type capability :: %{
@@ -133,9 +133,9 @@ defmodule Stripe.Account do
   }
 
   @type capabilities :: %{
-          card_payments: capability | nil,
-          legacy_payments: capability | nil,
-          transfers: capability | nil
+          optional(:card_payments) => capability | nil,
+          optional(:legacy_payments) => capability | nil,
+          optional(:transfers) => capability | nil
         }
 
   @type t :: %__MODULE__{
